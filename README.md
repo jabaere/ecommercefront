@@ -1,5 +1,10 @@
 # Getting Started with Create React App
 
+# 1.Download  repository https://github.com/scandiweb/junior-react-endpoint  
+# 2.Install all dependencies
+# 3.Download this repository
+# 4.Install all dependencies
+
 live demo
 
 ## Available Scripts
