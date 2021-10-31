@@ -16,7 +16,7 @@ class GlobalProvider extends Component {
       individualItemsQuantity:1 || localStorage.getItem("individualItemsQuantity"),
       addedItemsId: localStorage.getItem("addedItemsId"),
       selectedItem: JSON.parse(localStorage.getItem("selectedItem")),
-      cartDatatest: ourArray.filter(a=> a.quantity > 0) || [],
+      cartDatatest: ourArray || [],
       individualQuantity: 1,
       cartCount: localStorage.getItem("cartCount"),
       itemSize: localStorage.getItem("itemSize"),
