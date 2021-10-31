@@ -39,7 +39,7 @@ class HeaderCart extends React.Component {
       cartData: cartDatatest.filter((a) => a.quantity > 0),
       data: [],
     });
-    console.log(cartDatatest);
+    console.log(cartDatatest.filter(a=> a.quantity > 0));
 
     cartDatatest.map((item) => {
       //console.log(item.quantity)
