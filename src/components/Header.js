@@ -58,6 +58,22 @@ class Header extends React.Component {
     const data = ["tech", "all", "clothes"];
     localStorage.setItem("category", e.currentTarget.id);
     const x = localStorage.getItem("category");
+    data.map(a=>  a === x  ? 
+    
+      document.getElementById(x).style.cssText = `
+      color: #5ECE7B;
+      border-bottom: 2px solid #5ECE7B;
+      height:56px;
+     
+      font-weight: 600;
+      `
+      :
+      document.getElementById(a).style.cssText = `
+      color: black;
+      border:none;
+      font-weight: 400;
+      `     
+    )
     
   }
   cartOnCliCk() {

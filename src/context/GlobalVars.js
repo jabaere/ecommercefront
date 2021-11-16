@@ -23,7 +23,7 @@ class GlobalProvider extends Component {
       itemCapacity: localStorage.getItem("itemCapacity"),
       clothesSize: "",
       localData: [],
-      category: localStorage.getItem("category") || 'all',
+      category: 'All',
       cartToggle:false,
       currencyToggle:false,
       vectorToggle:false,
