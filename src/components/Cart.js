@@ -175,7 +175,7 @@ class Cart extends React.Component {
                   })
                 }
                 onClick={() => setCurrencyToggleAndCartToggle()}
-                
+               
               >
                 <div className="cart-content-left-side">
                   <p className="cart-content-item-title-full">{item.name}</p>
