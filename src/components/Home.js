@@ -127,6 +127,7 @@ query gettAlldata {
                 window.localStorage.setItem("addedItemsId", item.id);
               }}
               disabled={!item.inStock}
+              key={index}
             >
               {!item.inStock && <p id="outOfStock">OUT OF STOCK</p>}
               <Link to="/item">

@@ -113,6 +113,7 @@ class Tech extends React.Component {
                   ).style.marginTop = "24px";
                 }}
                 onClick={() => setAddedItemsId(item.id)}
+                key={index}
               >
                 {!item.inStock && <p id="outOfStock">OUT OF STOCK</p>}
                 <Link to="/item">

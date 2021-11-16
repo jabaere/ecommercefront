@@ -215,7 +215,7 @@ class Item extends React.Component {
           {this.state.data.map((item, index) => (
             <>
               
-              <div className="item-left-side">
+              <div className="item-left-side" key={index}>
                 {item.gallery.map((a, index) => (
                   <img
                     onClick={(e) =>
