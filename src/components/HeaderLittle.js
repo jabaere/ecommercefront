@@ -7,8 +7,7 @@ import cart from "../assets/cart.png";
 import GlobalContext from "../context/GlobalVars";
 import HeaderCart from "../components/HeaderCart";
 import All from "./All";
-import Tech from "./Tech";
-import Clothes from "./Clothes";
+
 //import Item from "./Item";
 import react from "react";
 //import Cart from "./Cart";
@@ -81,33 +80,21 @@ class HeaderLittle extends React.Component {
     const x = localStorage.getItem("category");
     if (x === "tech" && this.category3.current.id === "tech") {
       return (
-        this.setState({
-          content: (
-            <Tech content={this.state.content} itemClick={this.itemClick} />
-          ),
-        }),
+    
         (this.category3.current.className = "tech headerActive"),
         (this.category2.current.className = "clothes"),
         (this.category.current.className = "all")
       );
     } else if (x === "clothes" && this.category2.current.id === "clothes") {
       return (
-        this.setState({
-          content: (
-            <Clothes content={this.state.content} itemClick={this.itemClick} />
-          ),
-        }),
+     
         (this.category2.current.className = "clothes headerActive"),
         (this.category.current.className = "all"),
         (this.category3.current.className = "tech")
       );
     } else {
       return (
-        this.setState({
-          content: (
-            <All content={this.state.content} itemClick={this.itemClick} />
-          ),
-        }),
+      
         (this.category.current.className = "all headerActive"),
         (this.category3.current.className = "tech"),
         (this.category2.current.className = "clothes")
