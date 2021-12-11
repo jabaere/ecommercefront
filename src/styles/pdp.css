@@ -1,0 +1,218 @@
+.item-container{
+    display: flex;
+    padding-top: 80px;
+    margin-left: 121px;
+    width:1400px;
+    }
+    .item-left-side{
+      display: flex;
+      flex-direction: column;
+      margin-right: 17px;
+      margin-top: 48.59px;
+    }
+    .item-left-image-one{
+      height: 80px;
+      width: 79px;
+      left: 0px;
+      top: 0px;
+      border-radius: 0px;
+      cursor: pointer;
+      margin-bottom: 32px;
+    }
+    .item-left-image-two{
+      height: 80px;
+      width: 79px;
+      left: 100px;
+      top: 280px;
+      border-radius: 0px;
+      margin-top: 32.39px;
+      cursor: pointer;
+    }
+    .item-left-image-three{
+      height: 80px;
+      width: 79px;
+      left: 100px;
+      top: 400px;
+      border-radius: 0px;
+      margin-top: 40px;
+      cursor: pointer;
+    }
+    .item-right-side{
+      height: 559.592041015625px;
+      width: 1364.0277099609375px;
+      left: -25.41650390625px;
+      top: -48.59228515625px;
+      border-radius: 0px;
+      display: flex;
+    
+    }
+    
+    .item-right-side-picture{
+    
+      height: 511px;
+      width: 610px;
+    }
+    .item-right-side-picture > img {
+      height: 511px;
+      width: 610px;
+      left: 0px;
+      top: 0px;
+      border-radius: 0px;
+      padding-top: 48.59px;
+      padding-left: 25.42px;
+    
+    }
+    .item-rigth-side-content{
+      height: 513px;
+      width: auto;
+      left: 929px;
+      top: 160px;
+      border-radius: 0px;
+      margin-left: 100px;
+    }
+    .item-title{
+      height: 27px;
+      width: auto;
+      left: 929px;
+      top: 160px;
+      border-radius: nullpx;
+      font-family: Raleway;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-top:40px;
+    margin-bottom: 0;
+    color: #1D1F22;
+    }
+    .item-title2{
+      height: 27px;
+      width: 292px;
+      left: 929px;
+      top: 203px;
+      border-radius: nullpx;
+      font-family: Raleway;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 0;
+    color: #1D1F22;
+    }
+    .size-title{
+      height: 18px;
+     /* width: 38px;*/
+      left: 929px;
+      top: 273px;
+      border-radius: nullpx;
+      font-family: Roboto Condensed;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-top: 43px;
+      color: #1D1F22;    
+      margin-bottom: 8px;
+    }
+    .item-price-title{
+      height: 18px;
+      width: 50px;
+      left: 929px;
+      top: 384px;
+      border-radius: nullpx;
+      font-family: Roboto Condensed;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 0;
+    color: #1D1F22;
+    }
+    .item-price{
+      height: 46px;
+    width: auto;
+    left: 929px;
+    top: 412px;
+    border-radius: nullpx;
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    
+    color: #1D1F22;
+    margin-top: 10px;
+    margin-bottom: 0;
+    }
+    .item-buttton{
+      height: 52px;
+      width: 100%;
+      left: 929px;
+      top: 478px;
+      border-radius: 0px;
+      padding: 16px 32px 16px 32px;
+      margin-top: 20px;
+      background: #5ECE7B;
+      color: #FFFFFF;
+      border:none;
+      font-family: Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 19px;
+      letter-spacing: 0em;
+      text-align: center;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+    .item-description{
+      height: 103px;
+      width: 292px;
+      left: 929px;
+      top: 570px;
+      border-radius: nullpx;
+      /*font-family: Roboto;*/
+      font-size: 16px;
+      font-style: normal;
+      
+      line-height: 26px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #1D1F22;
+      margin-top: 40px;
+    }
+    
+    .item-size-margin{
+      margin-left: 12px;
+    }
+    .item-size-disabled{
+      border:1px solid #A6A6A6;
+      color:#A6A6A6
+    }
+    .itemFlex{
+      display: flex;
+    }
