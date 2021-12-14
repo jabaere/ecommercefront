@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Front End for Ecommerce app
 
 ## 1.For back-end, Download  repository https://github.com/scandiweb/junior-react-endpoint  
 ## 2.Install all dependencies and start script
