@@ -1,6 +1,6 @@
 # Front End for Ecommerce app
 
-## 1.For back-end, Download  repository https://github.com/scandiweb/junior-react-endpoint  
+## 1.For back-end, Download  repository https://github.com/jabaere/ecommercebackend  
 ## 2.Install all dependencies and start script
 ## 3.For front-end, Download this repository
 ## 4.Install all dependencies and start script
