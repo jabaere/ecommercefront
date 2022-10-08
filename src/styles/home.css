@@ -1,0 +1,249 @@
+#item-outOfStock{
+    height: 39px;
+    left: 370px;
+    top: 390px;
+    border-radius: nullpx;
+    font-family: Raleway;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px;
+    letter-spacing: 0px;
+  color: rgba(141, 143, 154, 1);
+  position: absolute;
+  z-index: 1;
+  
+  }
+  .items-container-home{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 100px;
+  }
+  #outOfStock{
+  
+  height: 39px;
+  margin-bottom: -180px;
+  padding-top: 130px;
+  border-radius: nullpx;
+  font-family: Raleway;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0px;
+  margin-top:0px;
+  color: rgba(141, 143, 154, 1);
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  
+  }
+  .items-container-home{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 100px;
+
+  }
+  
+  .product-title{
+  /* Title */
+  font-family: Raleway;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-left: 119px;
+  padding-top: 80px;
+  }
+  .item-card{
+   
+  width: 326px;
+  overflow: hidden;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+  padding: 16px 16px 36px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom:0;
+  margin-top: 103px;
+  margin-right: 40px;
+  z-index: 0;
+  }
+  .add-to-cart-home{
+    height: 52px;
+  width: 52px;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: -28px;
+  margin-left:255px;
+  cursor: pointer;
+  }
+  .add-to-cart-home:hover{
+    display: flex;
+  }
+  .add-to-cart-home-pic-two{
+    height: 24px;
+  width: 24px;
+  left: 14px;
+  top: 14px;
+  border-radius: 0px;
+  z-index: 1;
+  margin-left: -37px;
+  }
+  
+  .item-card:hover{
+    
+    position: static;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    
+    /* --c-white */
+    background: #FFFFFF;
+    
+    /* --product-card-box-shadow:hover */
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+  
+  }
+  .item-card  > a > img {
+    height: 330px;
+    width: 354px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    
+  
+  }
+  
+  .item-name{
+    height: 29px;
+  width: 354px;
+  left: 0px;
+  top: 0px;
+  border-radius: nullpx;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 29px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-bottom: 0px;
+  margin-top: 0;
+  }
+  .item-price{
+    position: static;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  
+  /* --price-regular-font */
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  
+  color: #1D1F22;
+  height: 29px;
+  width: 58px;
+  left: 0px;
+  top: 0px;
+  
+  
+  order: 0;
+  flex-grow: 0;
+  margin-bottom: 16px;
+  }
+  .card-content{
+    display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  margin-top: 24px;
+  position: static;
+  width: 354px;
+  height: 58px;
+  left: 16px;
+  top: 370px;
+  
+  
+  /* Inside Auto Layout */
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+  
+  }
+  
+  .item-price-container{
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  
+  position: static;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  
+  
+  /* Inside Auto Layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 0px;
+  height: 29px;
+  width: 58px;
+  left: 0px;
+  top: 29px;
+  border-radius: 0px;
+  
+  }
+
+  .hide{
+    height: 52px;
+  width: 52px;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-left:255px;
+  cursor: pointer;
+  }
+  .show{
+    height: 52px;
+  width: 52px;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -28px;
+  margin-left:255px;
+  cursor: pointer;
+  z-index: 1;
+  }
+
+  .container-width{
+    width:1280px;
+    overflow:hidden
+  }
+  .common-container{
+    order:8
+  }
