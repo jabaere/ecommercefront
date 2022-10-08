@@ -211,11 +211,11 @@ class GlobalProvider extends Component {
 
   //--------------------------------filter section
 
-  updateURL() {
+  updateURL(data) {
     const url = new URL(window.location);
     this.state.filteredData !== null &&
       this.state.filteredData.map((a) => {
-        const data = this.state.filteredData;
+       
         url.searchParams.set("filter", JSON.stringify(data));
         return window.history.pushState({}, "", url);
       });
@@ -239,7 +239,7 @@ class GlobalProvider extends Component {
     if (name === "Size" && indexOfSize !== -1) {
       const newArr = this.state.filteredData.map((object) => {
         if (object.name === "Size") {
-          return { ...object, name, value, id };
+         return { ...object, name, value, id };
         }
         return { ...object };
       });
@@ -250,14 +250,16 @@ class GlobalProvider extends Component {
     } else if (name === "Capacity" && indexOfCapacity !== -1) {
       const newArr = this.state.filteredData.map((object) => {
         if (object.name === "Capacity") {
+          
           return { ...object, name, value, id };
         }
-        return { ...object };
+          return { ...object };
       });
       this.setState({
         filteredData: newArr,
       });
       localStorage.setItem("filteredData", JSON.stringify(newArr));
+      this.updateURL(newArr);
     }
   };
 
@@ -273,7 +275,7 @@ class GlobalProvider extends Component {
     console.log("called deteleData");
   };
   componentDidUpdate(prevProps, prevState) {
-    this.updateURL();
+    this.updateURL(this.state.filteredData);
     const category =
       localStorage.getItem("category") || sessionStorage.getItem("category");
     let notEqual = this.state.category !== category;

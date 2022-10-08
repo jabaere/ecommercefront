@@ -187,11 +187,16 @@ class SideBar extends React.Component {
       );
   }
 
+  //
+
+
   componentDidUpdate(prevProps, prevState) {
     const location = this.props.location;
     this.updateRefs();
+    
     if (prevProps.location.pathname !== location.pathname) {
       this.getData();
+     
     }
   }
   componentWillUnmount() {
@@ -244,6 +249,7 @@ class SideBar extends React.Component {
   ///
 
   sizeClick(e, k, id, setFiltereddata, deteleData) {
+    console.log(e.currentTarget.value)
     if (e.currentTarget.value !== "") {
       e.currentTarget.title = id();
       setFiltereddata(e.currentTarget.value, k, e.currentTarget.title);
@@ -322,12 +328,16 @@ class SideBar extends React.Component {
                       this.sizeClick(e, k.id, id, setFiltereddata, deteleData)
                     }
                   >
+                    
                     <option value="" ref={this.sizeRef} default>
                       -
                     </option>
-                    <option value="choose size">
-                    -
+                    {
+                      filteredData &&
+                      <option value="" >
+                      -
                     </option>
+                    }
                     {size.map((a) => {
                       // console.log(a)
                       return (
@@ -352,9 +362,7 @@ class SideBar extends React.Component {
                     <option value="" ref={this.capacityRef}>
                       -
                     </option>
-                    <option value="choose capacity">
-                    -
-                    </option>
+                  
                     {capacity.map((a) => {
                       //console.log(a)
                       return (
