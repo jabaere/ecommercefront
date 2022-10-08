@@ -84,6 +84,7 @@ console.log(this.category3.current)
         (this.category3.current.className = "tech headerActive"),
         (this.category2.current.className = "clothes"),
         (this.category.current.className = "all")
+        
       );
     } else if (x === "clothes" && this.category2.current.id === "clothes") {
       return (

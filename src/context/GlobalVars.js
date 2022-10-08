@@ -211,14 +211,13 @@ class GlobalProvider extends Component {
 
   //--------------------------------filter section
 
-  updateURL(data) {
+  updateURL=(data) => {
     const url = new URL(window.location);
     this.state.filteredData !== null &&
-      this.state.filteredData.map((a) => {
-       
-        url.searchParams.set("filter", JSON.stringify(data));
+      
+       url.searchParams.set("filter", JSON.stringify(data));
         return window.history.pushState({}, "", url);
-      });
+      
   }
 
   setFiltereddata = (value, name, id) => {
@@ -246,6 +245,7 @@ class GlobalProvider extends Component {
       this.setState({
         filteredData: newArr,
       });
+      this.updateURL(newArr);
       localStorage.setItem("filteredData", JSON.stringify(newArr));
     } else if (name === "Capacity" && indexOfCapacity !== -1) {
       const newArr = this.state.filteredData.map((object) => {

@@ -135,9 +135,9 @@ class Clothes extends React.Component {
           filteredData.length > 0 ?  data
             .filter(item=> item.attributes
             .some(a=> a.items.some(i=> filteredData.some(p=> i.id===p.value))))
-            .map((item, index)=><Content item={item} index={index}/>)
+            .map((item, index)=><Content item={item} index={index} key={index}/>)
             :data
-            .map((item, index) => <Content item={item} index={index}/>
+            .map((item, index) => <Content item={item} index={index} key={index}/>
           )}
 
           <div

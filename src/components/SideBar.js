@@ -140,12 +140,18 @@ class SideBar extends React.Component {
             });
           break;
         case "Size":
-          this.sizeRef.current !== null &&
-            (this.sizeRef.current.innerHTML = a.value);
+         if(this.sizeRef.current !== null){
+            this.sizeRef.current.innerHTML = a.value
+            this.sizeRef.current.value = a.value
+            this.sizeRef.current.parentNode.title = a.id
+          }
           break;
         case "Capacity":
-          this.capacityRef.current !== null &&
-            (this.capacityRef.current.innerHTML = a.value);
+          if(this.capacityRef.current !== null){
+              this.capacityRef.current.innerHTML = a.value
+              this.capacityRef.current.value = a.value
+              this.capacityRef.current.parentNode.title = a.id
+            }
         case "With USB 3 ports" || "Touch ID in keyboard":
           this.withUsbRef
             .filter(Boolean)
@@ -249,11 +255,11 @@ class SideBar extends React.Component {
   ///
 
   sizeClick(e, k, id, setFiltereddata, deteleData) {
-    console.log(e.currentTarget.value)
     if (e.currentTarget.value !== "") {
       e.currentTarget.title = id();
       setFiltereddata(e.currentTarget.value, k, e.currentTarget.title);
     } else {
+      this.sizeRef.current.innerHTML = '-';
       deteleData(e.currentTarget.title);
     }
   }
@@ -315,10 +321,10 @@ class SideBar extends React.Component {
           style={{ display: "flex", flexDirection: "column", gap: "10px" }}
         >
           <label htmlFor="clothes">Filter:</label>
-          {attributes.map((k) => {
+          {attributes.map((k,index) => {
             //console.log(k)
             return (
-              <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 7 }} key={index}>
                 <h3>{k.id}</h3>
                 {k.id === "Size" && k.type === "text" ? (
                   <select
@@ -333,15 +339,15 @@ class SideBar extends React.Component {
                       -
                     </option>
                     {
-                      filteredData &&
+                      filteredData.length > 0 && filteredData.some(a=> a.name ==='Size') &&
                       <option value="" >
                       -
                     </option>
                     }
-                    {size.map((a) => {
+                    {size.map((a,index) => {
                       // console.log(a)
                       return (
-                        <option value={a.displayValue}>{a.displayValue}</option>
+                        <option value={a.displayValue} key={index}>{a.displayValue}</option>
                       );
                     })}
                   </select>
@@ -362,11 +368,16 @@ class SideBar extends React.Component {
                     <option value="" ref={this.capacityRef}>
                       -
                     </option>
-                  
-                    {capacity.map((a) => {
+                    {
+                      filteredData.length > 0 && filteredData.some(a=> a.name ==='Capacity') &&
+                      <option value="" >
+                      -
+                    </option>
+                    }
+                    {capacity.map((a,index) => {
                       //console.log(a)
                       return (
-                        <option value={a.displayValue}>{a.displayValue}</option>
+                        <option value={a.displayValue} key={index}>{a.displayValue}</option>
                       );
                     })}
                   </select>
@@ -393,6 +404,7 @@ class SideBar extends React.Component {
                             deteleData
                           )
                         }
+                        key={index}
                       ></div>
                     ) : a.id === "Yes" || a.id === "No" ? (
                       <div className="checbox-container">
