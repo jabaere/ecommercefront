@@ -47,7 +47,7 @@ class HeaderLittle extends React.Component {
     var category = sessionStorage.getItem('category') || localStorage.getItem("category")
     //console.log("mount header");
     this.setState({ mounted: true });
-console.log(this.category3.current)
+
     if (category === "tech") {
       this.category3.current.className = "tech headerActive";
     } else if (category === "clothes") {

@@ -347,10 +347,10 @@ class HeaderCart extends React.Component {
                                     item.color === i.id
                                       ? {
                                           backgroundColor: i.value,
-                                          border: "4px solid #0099CC",
+                                          border: "2px solid #0099CC",
                                           borderRadius: "4px",
-                                          height: "14px",
-                                          width: "20px",
+                                          height: "24px",
+                                          width: "24px",
                                         }
                                       : { backgroundColor: i.value }
                                   }

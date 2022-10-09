@@ -199,7 +199,6 @@ class SideBar extends React.Component {
     const location = this.props.location;
     const {filteredData, deteleData } = this.context;
     this.updateRefs();
-    console.log(location.pathname)
     function clearArray(array) {
       while (array.length > 0) {
         array.pop();

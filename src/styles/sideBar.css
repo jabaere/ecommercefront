@@ -1,7 +1,6 @@
 .container{
     display: flex;
     width: 1280px;
-    align-items: baseline;
     padding: 30px;
 }
 
@@ -26,15 +25,15 @@ label{
 .colorButtons {
     width: 24px;
     height: 24px;
-    border: 2px solid rgb(0, 153, 204);
+    border: 1px solid rgb(0, 153, 204);
     cursor:'pointer';
     border-radius:'4px';
     border-radius: 4px;
 }
 
 .colorActive{
-   border: 2px solid black;
+   border: 2px solid indigo
 }
 .colorNotActive{
-    border:none
+    border:1.5px solid currentColor;
 }
