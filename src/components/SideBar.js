@@ -129,8 +129,7 @@ class SideBar extends React.Component {
     return filteredData.map((a, index) => {
       switch (a.name) {
         case "Color":
-          const current = this.colorRef;
-          this.colorRef
+         this.colorRef
             .filter((item) => item.id === a.value)
             .map((p) => {
               if (p.id === a.value) {
@@ -198,19 +197,29 @@ class SideBar extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const location = this.props.location;
+    const {filteredData, deteleData } = this.context;
     this.updateRefs();
-    
-    if (prevProps.location.pathname !== location.pathname) {
-      this.getData();
-     
+    console.log(location.pathname)
+    function clearArray(array) {
+      while (array.length > 0) {
+        array.pop();
+      }
     }
+    if (prevProps.location.pathname !== location.pathname ) {
+      filteredData.forEach(a=> deteleData(a.id))
+      const data = clearArray(filteredData)
+      localStorage.setItem("filteredData", JSON.stringify(data))
+      this.getData();
+      
+    }
+    
   }
-  componentWillUnmount() {
-    console.log("unmount sidebar");
-    this.setState = (state, callback) => {
-      return;
-    };
-  }
+  // componentWillUnmount() {
+  //   console.log("unmount sidebar");
+  //   this.setState = (state, callback) => {
+  //     return;
+  //   };
+  // }
 
   //filter same values in data
 
@@ -220,7 +229,7 @@ class SideBar extends React.Component {
     });
   };
 
-  ///
+  /// handle color changes
   colorClick(e, a, k, id, setFiltereddata, deteleData) {
     if (
       e.currentTarget.className === "colorButtons colorNotActive" &&
@@ -243,7 +252,7 @@ class SideBar extends React.Component {
     }
   }
 
-  ///
+  /// handle chekbox section changes
   checkBoxClick(e, a, k, id, setFiltereddata, deteleData) {
     if (e.currentTarget.checked) {
       e.currentTarget.title = id();
@@ -252,7 +261,7 @@ class SideBar extends React.Component {
     return deteleData(e.currentTarget.title);
   }
 
-  ///
+  /// handle size change
 
   sizeClick(e, k, id, setFiltereddata, deteleData) {
     if (e.currentTarget.value !== "") {
@@ -264,7 +273,7 @@ class SideBar extends React.Component {
     }
   }
 
-  ///
+  ///handle capacity changes
 
   capacityClick(e, k, id, setFiltereddata, deteleData) {
     if (e.currentTarget.value !== "") {
@@ -279,9 +288,11 @@ class SideBar extends React.Component {
   render() {
     const { data, isLoading } = this.state;
     const { setFiltereddata, filteredData, deteleData } = this.context;
+    //generate random id
     const id = function () {
       return Math.random().toString(36).substring(2, 6);
     };
+    //take data from attributtes, size, capacity
     let attributes = [];
     let size = [];
     let capacity = [];
@@ -305,7 +316,7 @@ class SideBar extends React.Component {
           }
         });
       });
-
+     //filter same data from attributes array
       const filteredAttributes = Array.from(
         new Set(attributes.map((a) => a.id))
       ).map((id) => {
@@ -431,7 +442,7 @@ class SideBar extends React.Component {
                             return true;
                           }}
                         />
-                        <label for={k.id + a.id}> {a.id}</label>
+                        <label htmlFor={k.id + a.id}> {a.id}</label>
                       </div>
                     ) : (
                       ""
