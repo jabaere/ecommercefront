@@ -37,3 +37,17 @@ label{
 .colorNotActive{
     border:1.5px solid currentColor;
 }
+.filter{
+
+border: 1px solid aliceblue;
+padding: 2px;
+padding-top: 4px;
+padding-bottom: 4px;
+width: 200px;
+border-radius: 4px;
+font-size: 15px;
+letter-spacing: 30px;
+font-family: -apple-system, BlinkMacSystemFont,;
+font-family: -apple-system, BlinkMacSystemFont;
+background-color: lightgreen;
+}

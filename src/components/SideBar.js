@@ -330,7 +330,7 @@ class SideBar extends React.Component {
           action="/action_page.php"
           style={{ display: "flex", flexDirection: "column", gap: "10px" }}
         >
-          <label htmlFor="clothes">Filter:</label>
+          <label htmlFor="clothes" className="filter">FILTER</label>
           {attributes.map((k,index) => {
             //console.log(k)
             return (
