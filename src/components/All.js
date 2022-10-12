@@ -1,9 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import addItemToCartPic from "../assets/Surface.png";
-import addItemToCartPic2 from "../assets/EmptyCart.png";
 import GlobalContext from "../context/GlobalVars";
-import { addTocarT, setItemId } from "./utils.js";
 import { withRouter } from "react-router-dom";
 import Content from "./Content"
 //import Header from "./Header";
@@ -40,13 +36,10 @@ class All extends React.Component {
   
 
   render() {
-    const { currencyIcon, setAddedItemsId, setCurrencyToggleAndCartToggle,data,filteredData } =
+    const {setCurrencyToggleAndCartToggle,data,filteredData } =
       this.context;
-      const storage = JSON.parse(localStorage.getItem('filteredData')) || []
-     
-
     return (
-      <div style={{width:'80%'}}>
+      <div>
         <div
           className="product-title Cartmain"
           onClick={() => setCurrencyToggleAndCartToggle()}

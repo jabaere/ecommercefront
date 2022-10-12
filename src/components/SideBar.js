@@ -24,9 +24,8 @@ class SideBar extends React.Component {
     };
   }
   getData = () => {
-    const location = this.props.location;
     const category =
-      localStorage.getItem("category") || sessionStorage.getItem("category");
+      localStorage.getItem("category") || sessionStorage.getItem("category") || 'all';
 
     if (category !== "all") {
       const query = `
@@ -125,7 +124,7 @@ class SideBar extends React.Component {
   //end
 
   updateRefs = () => {
-    const { setFiltereddata, filteredData, deteleData } = this.context;
+    const { filteredData } = this.context;
     return filteredData.map((a, index) => {
       switch (a.name) {
         case "Color":
@@ -134,8 +133,9 @@ class SideBar extends React.Component {
             .map((p) => {
               if (p.id === a.value) {
                 p.title = a.id;
-                p.className = "colorButtons colorActive";
+                return p.className = "colorButtons colorActive";
               }
+              return true
             });
           break;
         case "Size":
@@ -151,6 +151,7 @@ class SideBar extends React.Component {
               this.capacityRef.current.value = a.value
               this.capacityRef.current.parentNode.title = a.id
             }
+            break;
         case "With USB 3 ports" || "Touch ID in keyboard":
           this.withUsbRef
             .filter(Boolean)
@@ -162,7 +163,9 @@ class SideBar extends React.Component {
                 p.title = a.id;
                 p.checked = true;
               }
+              return true
             });
+            break;
         case "Touch ID in keyboard":
           this.touchRef
             .filter(Boolean)
@@ -174,9 +177,12 @@ class SideBar extends React.Component {
                 p.title = a.id;
                 p.checked = true;
               }
+              return true
             });
+            break;
         default:
       }
+      return true
     });
   };
   componentDidMount() {
@@ -246,7 +252,7 @@ class SideBar extends React.Component {
         .map((c) => {
           //console.log(c)
           deteleData(e.currentTarget.title);
-          c.className = "colorButtons colorNotActive";
+          return c.className = "colorButtons colorNotActive";
         });
     }
   }
@@ -301,18 +307,20 @@ class SideBar extends React.Component {
     } else {
       data.map((a) => {
         //   console.log(a)
-        a.attributes.map((i) => {
+       return a.attributes.map((i) => {
           //console.log(i)
           attributes.push(i);
           if (i.name === "Size") {
             i.items.map((a) => size.push(a));
             const filtSize = this.filterdata(size);
-            size = [...filtSize];
+           return size = [...filtSize];
+            
           } else if (i.name === "Capacity") {
             i.items.map((a) => capacity.push(a));
             const filtSize = this.filterdata(capacity);
-            capacity = [...filtSize];
+           return capacity = [...filtSize];
           }
+          return true
         });
       });
      //filter same data from attributes array

@@ -246,5 +246,7 @@
     overflow:hidden
   }
   .common-container{
-    order:8
+    order:8;
+    display: flex;
+    
   }

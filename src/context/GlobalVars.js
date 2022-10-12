@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
 const GlobalContext = React.createContext();
 
 class GlobalProvider extends Component {
   // Context state
 
   constructor(props) {
-    var category = sessionStorage.getItem("key");
-    super(props);
+   super(props);
     var storedArray = localStorage.getItem("ourarraykey");
     let ourArray = JSON.parse(storedArray);
     this.state = {
@@ -25,7 +23,7 @@ class GlobalProvider extends Component {
       itemCapacity: localStorage.getItem("itemCapacity"),
       clothesSize: "",
       localData: [],
-      category: localStorage.getItem("category") || "all",
+      category: localStorage.getItem("category"),
       cartToggle: false,
       currencyToggle: false,
       vectorToggle: false,
@@ -100,7 +98,7 @@ class GlobalProvider extends Component {
 
   getData() {
     const category =
-      localStorage.getItem("category") || sessionStorage.getItem("category");
+      localStorage.getItem("category") || sessionStorage.getItem("category") || 'all';
     if (category !== "all") {
       const query = `
       query GetByTitle {
@@ -199,6 +197,7 @@ class GlobalProvider extends Component {
       fetch(url, opts)
         .then((res) => res.json())
         .then(({ data }) => {
+          console.log(data);
           this.setState({
             data: data.category.products,
             isLoading: false,
@@ -264,7 +263,7 @@ class GlobalProvider extends Component {
   };
 
   deteleData = (id, name) => {
-    console.log(id);
+   // console.log(id);
     this.setState((prevState) => ({
       filteredData: this.state.filteredData.filter((a) => a.id !== id),
     }));
@@ -300,7 +299,7 @@ class GlobalProvider extends Component {
         filteredData: storage,
       });
     this.getData();
-  }
+ }
 
   //----------------------------------filter section - end
 
@@ -308,10 +307,13 @@ class GlobalProvider extends Component {
     //const boo = this.state.cartDatatest.filter((a) => a.quantity > 0)
     const xd = this.state.cartDatatest.map((i, index) => {
       if (i.id === item.id) {
-        return (i.other = true), (i.id = i.id + "-" + index);
+        i.other = true;
+        i.id = i.id + "-" + index;
+        return true
       } else {
         return null;
       }
+     
     });
 
     if (xd.includes(item.id)) {
@@ -346,6 +348,7 @@ class GlobalProvider extends Component {
         JSON.stringify(prevState.cartDatatest)
       );
     });
+   
   };
 
   render() {

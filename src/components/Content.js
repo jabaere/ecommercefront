@@ -34,7 +34,7 @@ export default class Content extends React.Component {
   };
 
     render(){
-        const { currencyIcon, setAddedItemsId, setCurrencyToggleAndCartToggle,data,filteredData } =
+        const { currencyIcon, setAddedItemsId,data } =
         this.context;
         return(
         <div

@@ -18,6 +18,9 @@
   }
   .Cartmain{
     width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+   
   }
   .containerindcart{
     width: 1480px;

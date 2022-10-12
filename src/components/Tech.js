@@ -1,10 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import addItemToCartPic from "../assets/Surface.png";
-import addItemToCartPic2 from "../assets/EmptyCart.png";
 import GlobalContext from "../context/GlobalVars";
-import { addTocarT } from "./utils.js";
-import { setItemId } from "./utils.js";
 import Content from "./Content"
 //import Header from "./Header";
 

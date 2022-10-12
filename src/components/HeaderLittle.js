@@ -43,7 +43,6 @@ class HeaderLittle extends React.Component {
   }
 
   componentDidMount() {
-    const x = localStorage.getItem("category");
     var category = sessionStorage.getItem('category') || localStorage.getItem("category")
     //console.log("mount header");
     this.setState({ mounted: true });
